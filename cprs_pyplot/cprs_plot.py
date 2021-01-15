@@ -6,7 +6,7 @@ import itertools
 
 # compression test filesize in MB
 input_file_size=19.0
-title="my 16 MB binary test file, release build"
+title="my 19 MB binary test file, release build"
 
 # plot colors to cycle through
 c_colors = itertools.cycle(["r", "b", "g", "y"])

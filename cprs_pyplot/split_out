@@ -4,13 +4,13 @@
 #
 # Put files in out_files/
 
-file="my_cprs_example_file"
+file="example_out_file"
 
 for cprs in "brotli" "zlib" "lzma" "bzip"; do
   f="data/$cprs.txt"
   grep "$cprs" out_files/$file | awk -F , '{print $1, $4, $6, $7}' > $f
 
-  for blk in 12 16 24 32; do
+  for blk in 12 16; do
     f="data/$cprs"
     f+="_"
     f+="$blk.txt"
