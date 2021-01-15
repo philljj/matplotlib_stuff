@@ -1,0 +1,20 @@
+#!/bin/bash
+# Files are written in csv form:
+#   type,level,block size,compr time,compressed size,space saved (%),decompr time
+#
+# Put files in out_files/
+
+file="my_cprs_example_file"
+
+for cprs in "brotli" "zlib" "lzma" "bzip"; do
+  f="data/$cprs.txt"
+  grep "$cprs" out_files/$file | awk -F , '{print $1, $4, $6, $7}' > $f
+
+  for blk in 12 16 24 32; do
+    f="data/$cprs"
+    f+="_"
+    f+="$blk.txt"
+
+    grep "$cprs.*,$blk," out_files/$file | awk -F , '{print $1, $4, $6, $7}' > $f
+  done
+done

@@ -1,0 +1,6 @@
+1. compression test output files go in out_files/
+2. run split_out to parse data from output files and place it in data/
+3. data/ contents are ephemeral, used only for plotting
+4. run cprs_plot.py to plot what's in data/
+5. drink espresso
+6. that's it
